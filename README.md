@@ -30,7 +30,7 @@ $result = $request->call($url, null, null, "GET");
 if ($request->isOk()) { //checks for Code:200
 
     if($result->isError()) { //if response of api has error
-       print($result->getErrorMessage());
+        print($result->getErrorMessage());
     } else {
         // $dataAsObject = $result->getJson();
         // echo $dataAsObject->username;
