@@ -125,7 +125,6 @@ class Api {
 
            public function call($url, $params = "", $headers = "", $method = "GET") 
            {
-
                   $ch = curl_init();
                   curl_setopt($ch, CURLOPT_URL, $url);
                   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
@@ -161,13 +160,13 @@ class Api {
                   }
 
                   $this->response = curl_exec($ch);
-                  $this->curlInfo = curl_getinfo($ch);
                   if (curl_errno($ch)) {
                       $this->curlErrno = curl_errno($ch);
                       $this->curlError = curl_error($ch);
                       curl_close($ch);
                       return;
                   }
+                  $this->curlInfo = curl_getinfo($ch);
                   curl_close($ch);
                   return new Result($this->response);
            }
