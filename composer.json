@@ -17,8 +17,8 @@
         "ext-curl": "*"
     },
     "autoload": {
-        "psr-0": {
-            "Api": "Api"
+        "psr-4": {
+            "PHPLicengine\\Api": "PHPLicengine/Api"
         }
     }
 }
