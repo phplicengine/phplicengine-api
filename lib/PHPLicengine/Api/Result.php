@@ -21,45 +21,37 @@ namespace PHPLicengine\Api;
 
 class Result {
 
-      protected $error;
-      protected $message;
+     protected $error;
+     protected $message;
 
-      public function __construct($data) {
-
+     public function __construct($data) 
+     {
              $this->data = $data;
-
      }
 
-     public function isError () {
-
+     public function isError () 
+     {
             return isset($this->getJson()->error) && $this->getJson()->error;
-
      }
 
-     public function getErrorMessage () {
-
+     public function getErrorMessage () 
+     {
             return $this->getJson()->message;
-
      }
 
      public function getBody()
-
      {
-
             return $this->data;
-
      }
 
-     public function getJson () {
-
+     public function getJson () 
+     {
             return json_decode($this->data);
-
      }
 
-     public function getJsonAsArray () {
-
+     public function getJsonAsArray () 
+     {
             return json_decode($this->data, true);
-
      }
 
 }
