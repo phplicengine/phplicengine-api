@@ -37,7 +37,7 @@ if ($request->isOk()) { //checks for Code:200
     } else {
         // $dataAsObject = $result->getJson();
         // echo $dataAsObject->username;
-        // $request->getContentType();
+        // echo $request->getContentType();
         
         print("<pre>");
         print_r($result->getJsonAsArray());
