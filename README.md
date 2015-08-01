@@ -16,6 +16,9 @@ $request = new Api("API key goes here");
 // You can use below to enable it again.
 // $request->enableSslVerification();
 
+// timeout is set to 30 by default. You can use below to change it if needed.
+// $request->setTimeout(60);
+
 // first parameter is url, second is query as array, third is header as array, fourth is method
 // valid methods: PUT, DELETE, POST, GET. default value is GET.
 // Only first parameter (i.e. $url) is required.
@@ -34,6 +37,8 @@ if ($request->isOk()) { //checks for Code:200
     } else {
         // $dataAsObject = $result->getJson();
         // echo $dataAsObject->username;
+        // $request->getContentType();
+        
         print("<pre>");
         print_r($result->getJsonAsArray());
     }
