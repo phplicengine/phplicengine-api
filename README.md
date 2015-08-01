@@ -9,8 +9,6 @@ This code is still draft and not yet ready to use. Please do not download it yet
 
 use PHPLicengine\Api;
 
-// API key in constructor is optional. Only pass it if required.
-
 $request = new Api("API key goes here");
 
 // SSL verification is enabled by default. You can use below to disable it.
