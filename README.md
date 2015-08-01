@@ -34,8 +34,8 @@ if ($request->isOk()) { //checks for Code:200
     } else {
         // $dataAsObject = $result->getJson();
         // echo $dataAsObject->username;
-        // print_r($result->getJsonAsArray());
-        print($result->getBody());
+        print("<pre>");
+        print_r($result->getJsonAsArray());
     }
 
 } else { // api responseCode is not 200:OK
