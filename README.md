@@ -41,9 +41,9 @@ if ($request->isOk()) { //checks for Code:200
 } else { // api responseCode is not 200:OK
 
     if ($request->isCurlError()) {
-        print("Curl Connection: ".$request->getCurlErrno()." : ".$request->getCurlError()."<br>");
+        die("Curl Connection: ".$request->getCurlErrno()." : ".$request->getCurlError()."<br>");
     } else {
-        print("Error ".$request->getResponseCode()." : ".$request->getReasonPhrase()."<br>");
+        die("Error ".$request->getResponseCode()." : ".$request->getReasonPhrase()."<br>");
     }
 
 }
