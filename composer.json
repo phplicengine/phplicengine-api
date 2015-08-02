@@ -1,5 +1,5 @@
 {
-    "name": "phplicengine/api",
+    "name": "phplicengine/phplicengine-api",
     "type": "library",
     "description": "API for PHPLicengine",
     "keywords": ["api","restapi"],
