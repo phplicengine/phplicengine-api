@@ -96,9 +96,8 @@ class Api {
         511 => 'Network Authentication Required',
     );
 
-
            public function __construct($api_key = null) 
- 	   { 
+           { 
                   if (!function_exists('curl_init')) { 
                       throw new Exception("cURL is not available. This API wrapper cannot be used."); 
                   } 
@@ -109,25 +108,25 @@ class Api {
            { 
  		  $this->_verify_ssl = true; 
  		  $this->_verify_host = 2; 
- 	   } 
+           } 
   
            public function disableSslVerification() 
- 	   { 
+           { 
  	 	  $this->_verify_ssl = false; 
  		  $this->_verify_host = 0; 
- 	   } 
+           } 
 
            public function setTimeout($timeout) 
- 	   { 
+           { 
  	 	  $this->_timeout = $timeout; 
- 	   } 
+           } 
 
            public function setApiKey($api_key) 
-    	   { 
+           { 
                   $this->_api_key = $api_key; 
            } 
 
-           public function call($url, $params = "", $headers = "", $method = "GET") 
+           private function _call($url, $params = "", $headers = "", $method = "GET") 
            {
                   $ch = curl_init();
                   curl_setopt($ch, CURLOPT_URL, $url);
