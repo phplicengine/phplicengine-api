@@ -33,7 +33,7 @@ class Client (
              $this->base_url = $base_url;       
       }
       
-      public function getClientById ($base_url, $clientId) {
+      public function getClientById ($clientId) {
              return $this->api->_call($this->base_url . '/api/client/' . $clientId);
       }
       
