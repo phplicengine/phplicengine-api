@@ -30,7 +30,7 @@ $response = $api->get($url, null, null);
 // print($response->getBody());
 // exit;
 
-if ($api->isOk()) { //checks for Code:200
+if ($api->isOk()) { // checks for Code:200
 
     if ($response->isError()) { // if response of api has error
         print($response->getErrorMessage());
