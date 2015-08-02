@@ -184,7 +184,7 @@ class Api {
                   return $this->_call($url, $params, $headers, $method = "POST")      
            }
 
-           public function remove($url, $params = "", $headers = "") 
+           public function delete($url, $params = "", $headers = "") 
            {
                   return $this->_call($url, $params, $headers, $method = "DELETE")      
            }
