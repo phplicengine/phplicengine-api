@@ -174,6 +174,26 @@ class Api {
                   return new Result($this->response);
            }
 
+           public function get($url, $params = "", $headers = "") 
+           {
+                  return $this->_call($url, $params, $headers, $method = "GET")      
+           }
+           
+           public function post($url, $params = "", $headers = "") 
+           {
+                  return $this->_call($url, $params, $headers, $method = "POST")      
+           }
+
+           public function remove($url, $params = "", $headers = "") 
+           {
+                  return $this->_call($url, $params, $headers, $method = "DELETE")      
+           }
+
+           public function put($url, $params = "", $headers = "") 
+           {
+                  return $this->_call($url, $params, $headers, $method = "PUT")      
+           }
+
            public function getResponseCode()
            {
                   return $this->curlInfo['http_code'];
