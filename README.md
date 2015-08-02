@@ -21,7 +21,7 @@ $api = new Api("API key goes here");
 
 // first parameter is url, second is query as array, third is header as array.
 // Only first parameter (i.e. $url) is required.
-// get(), post(), remove(), put() methods are available.
+// get(), post(), delete(), put() methods are available.
 $response = $api->get($url, null, null);
 
 // For debug purposes only:
