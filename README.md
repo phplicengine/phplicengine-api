@@ -9,46 +9,46 @@ This code is still draft and not yet ready to use. Please do not download it yet
 
 use PHPLicengine\Api;
 
-$request = new Api("API key goes here");
+$api = new Api("API key goes here");
 
 // SSL verification is enabled by default. You can use below to disable it.
-// $request->disableSslVerification();
+// $api->disableSslVerification();
 // You can use below to enable it again.
-// $request->enableSslVerification();
+// $api->enableSslVerification();
 
 // timeout is set to 30 by default. You can use below to change it if needed.
-// $request->setTimeout(60);
+// $api->setTimeout(60);
 
-// first parameter is url, second is query as array, third is header as array, fourth is method
-// valid methods: PUT, DELETE, POST, GET. default value is GET.
+// first parameter is url, second is query as array, third is header as array.
 // Only first parameter (i.e. $url) is required.
-$result = $request->call($url, null, null, "GET");
+// get(), post(), remove(), put() methods are available.
+$response = $api->get($url, null, null);
 
 // For debug purposes only:
-// print($request->getHeaders());
-// print_r($request->getCurlInfo());
-// print($result->getBody());
+// print($api->getHeaders());
+// print_r($api->getCurlInfo());
+// print($response->getBody());
 // exit;
 
-if ($request->isOk()) { //checks for Code:200
+if ($api->isOk()) { //checks for Code:200
 
-    if ($result->isError()) { // if response of api has error
-        print($result->getErrorMessage());
+    if ($response->isError()) { // if response of api has error
+        print($response->getErrorMessage());
     } else {
-        // $dataAsObject = $result->getJson();
+        // $dataAsObject = $response->getJson();
         // echo $dataAsObject->username;
-        // echo $request->getContentType();
+        // echo $api->getContentType();
         
         print("<pre>");
-        print_r($result->getJsonAsArray());
+        print_r($response->getJsonAsArray());
     }
 
 } else { // api responseCode is not 200:OK
 
-    if ($request->isCurlError()) {
-        die("Curl Connection: ".$request->getCurlErrno()." : ".$request->getCurlError());
+    if ($api->isCurlError()) {
+        die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
     } else {
-        die("Error ".$request->getResponseCode()." : ".$request->getReasonPhrase());
+        die("Error ".$api->getResponseCode()." : ".$api->getReasonPhrase());
     }
 
 }
