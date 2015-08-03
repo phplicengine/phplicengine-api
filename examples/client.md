@@ -1,10 +1,8 @@
-#### * Get Client Info by id
+All API URLs listed here must be prefixed by the root API URL, such as http://www.mysite.com/phplicengine/api
 
-To get client info send a GET request to /client/{id}
+#### GET /client/<client_id> - Get Client Info by id
 
-e.g.
-
-$url = "http://www.mysite.com/phplicengine/api/client/11";
+e.g. http://www.mysite.com/phplicengine/api/client/11
 
 Sample:
 
