@@ -25,38 +25,44 @@ namespace PHPLicengine\Api;
 
 class Result {
 
-     protected $error;
-     protected $message;
+      protected $error;
+      protected $message;
+      protected $headers;
 
-     public function __construct($data) 
-     {
-             $this->data = $data;
-     }
+      public function __construct($body, $headers) 
+      {
+             $this->body = $body;
+             $this->headers = $headers;
+      }
 
-     public function isError () 
-     {
-            return isset($this->getJson()->error) && $this->getJson()->error;
-     }
+      public function isValidResponse () 
+      {
+             return isset($this->headers['x-phplicen-response']) && (bool) $this->headers['x-phplicen-response'];
+      }
 
-     public function getErrorMessage () 
-     {
-            return $this->getJson()->message;
-     }
+      public function isError () 
+      {
+             return isset($this->getJson()->error) && $this->getJson()->error;
+      }
+     
+      public function getErrorMessage () 
+      {
+             return $this->getJson()->message;
+      }
 
-     public function getBody()
-     {
-            return $this->data;
-     }
+      public function getBody()
+      {
+             return $this->body;
+      }
 
-     public function getJson () 
-     {
-            return json_decode($this->data);
-     }
+      public function getJson () 
+      {
+             return json_decode($this->body);
+      }
 
-     public function getJsonAsArray () 
-     {
-            return json_decode($this->data, true);
-     }
+      public function getJsonAsArray () 
+      {
+             return json_decode($this->body, true);
+      }
 
 }
-
