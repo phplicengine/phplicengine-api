@@ -23,25 +23,19 @@
 
 namespace PHPLicengine\Service;
 
-class Client (
+class Client extense \PHPLicengine\Api (
  
-      private $api;
       private $base_url;
       
       public function __construct ($base_url, $api_key = null)
       {
-             $this->api = new \PHPLicengine\Api($api_key);
+             parent::__construct($api_key);
              $this->base_url = $base_url;       
       }
       
-      public function getApi()
-      {
-             return $this->api;
-      }
-
       public function getClientById ($clientId) 
       {
-             return $this->api->_call($this->base_url . '/api/client/' . $clientId);
+             return $this->_call($this->base_url . '/api/client/' . $clientId);
       }
       
 )
