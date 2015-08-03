@@ -28,6 +28,7 @@ class Result {
       protected $error;
       protected $message;
       protected $headers;
+      protected $validResponseHeader = 'x-phplicen-response';
 
       public function __construct($body, $headers) 
       {
@@ -37,7 +38,7 @@ class Result {
 
       public function isValidResponse () 
       {
-             return isset($this->headers['x-phplicen-response']) && (bool) $this->headers['x-phplicen-response'];
+             return isset($this->headers[$this->validResponseHeader]) && (bool) $this->headers[$this->validResponseHeader];
       }
 
       public function isError () 
