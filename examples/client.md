@@ -1,6 +1,6 @@
 All API URLs listed here must be prefixed by the root API URL, such as http://www.mysite.com/phplicengine/api
 
-#### GET /client/<client_id> - Get Client Info by id
+#### GET /client/{client_id} - Get Client Info by id
 
 e.g. http://www.mysite.com/phplicengine/api/client/11
 
