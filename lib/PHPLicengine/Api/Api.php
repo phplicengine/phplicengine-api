@@ -135,6 +135,7 @@ class Api {
                   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->_verify_ssl);
                   curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, $this->_verify_host);
+                  curl_setopt($ch, CURLOPT_HEADER, 1);
                   curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
                   switch (strtoupper($method)) { 
                           case 'PUT':
@@ -142,7 +143,7 @@ class Api {
                                       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
                                       curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
                           break;
- 	                  case 'POST':
+ 	               case 'POST':
                                       curl_setopt($ch, CURLOPT_POST, true);
                                       curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
                           break;
@@ -171,7 +172,45 @@ class Api {
                   }
                   $this->curlInfo = curl_getinfo($ch);
                   curl_close($ch);
-                  return new Result($this->response);
+                  return new Result($this->_getBody());
+           }
+
+           private function _parseHeaders($raw_headers) 
+           {
+                   if (!function_exists('http_parse_headers')) {
+                       $headers = array();
+                       $key = '';
+
+                       foreach(explode("\n", $raw_headers) as $i => $h) {
+                               $h = explode(':', $h, 2);
+
+                               if (isset($h[1])) {
+                                   if (!isset($headers[$h[0]]))
+                                       $headers[$h[0]] = trim($h[1]);
+                                   elseif (is_array($headers[$h[0]])) {
+                                           $headers[$h[0]] = array_merge($headers[$h[0]], array(trim($h[1])));
+                                   }
+                                   else {
+                                         $headers[$h[0]] = array_merge(array($headers[$h[0]]), array(trim($h[1])));
+                                   }
+                                   $key = $h[0];
+                               }
+                               else { 
+                                     if (substr($h[0], 0, 1) == "\t")
+                                         $headers[$key] .= "\r\n\t".trim($h[0]);
+                                     elseif (!$key) 
+                                         $headers[0] = trim($h[0]); 
+                               }
+                       }
+
+                       return $headers;
+                      
+                   } else {
+
+                       return http_parse_headers($raw_headers);
+
+                   } 
+                              
            }
 
            public function get($url, $params = "", $headers = "") 
@@ -228,7 +267,17 @@ class Api {
 
            public function getHeaders()
            {
-                  return $this->curlInfo['request_header'];
+                  return $this->_parseHeaders(substr($this->response, 0, $this->_getHeaderSize()));
+           }
+
+           private function _getBody()
+           {
+                  return substr($this->response, $this->_getHeaderSize());
+           }
+
+           private function _getHeaderSize()
+           {
+                  return $this->curlInfo['header_size'];
            }
 
            public function getCurlInfo()
@@ -236,4 +285,3 @@ class Api {
                   return $this->curlInfo;
            }
 }
-
