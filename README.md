@@ -45,7 +45,7 @@ if ($api->isOk()) { // checks for Code:200
         }
 
     } else {
-            print("Invalid phplicengine response.");
+            print("Invalid PHPLicengine response.");
     }
     
 } else { // api responseCode is not 200:OK
