@@ -10,10 +10,10 @@ Sample:
 
 ```php
 use PHPLicengine\Service\Client;
-$client = new Client ($base_url, $api_key);
-$response = $client->getClientById(1);
+$api = new Client ($base_url, $api_key);
+$response = $api->getClientById(1);
 
-if ($response->getApi()->isOk()) { //checks for Code:200
+if ($api->isOk()) { //checks for Code:200
 
     if ($response->isValidResponse()) {
     
@@ -22,7 +22,7 @@ if ($response->getApi()->isOk()) { //checks for Code:200
         } else {
             // $dataAsObject = $response->getJson();
             // echo $dataAsObject->username;
-            // echo $response->getApi()->getContentType();
+            // echo $api->getContentType();
             print("<pre>");
             print_r($response->getJsonAsArray());
         }
@@ -33,10 +33,10 @@ if ($response->getApi()->isOk()) { //checks for Code:200
     
 } else { // api responseCode is not 200:OK
 
-    if ($response->getApi()->isCurlError()) {
-        die("Curl Connection: ".$response->getApi()->getCurlErrno()." : ".$response->getApi()->getCurlError());
+    if ($api->isCurlError()) {
+        die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
     } else {
-        die("Error ".$response->getApi()->getResponseCode()." : ".$response->getApi()->getReasonPhrase());
+        die("Error ".$api->getResponseCode()." : ".$api->getReasonPhrase());
     }
 
 }
