@@ -13,7 +13,7 @@ use PHPLicengine\Service\Client;
 $api = new Client ($base_url, $api_key);
 $response = $api->getClientById(1);
 
-if ($api->isOk()) { //checks for Code:200
+if ($api->isOk()) { // checks for Code:200
 
     if ($response->isValidResponse()) {
     
