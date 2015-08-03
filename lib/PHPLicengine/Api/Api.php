@@ -143,7 +143,7 @@ class Api {
                                       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
                                       curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
                           break;
- 	               case 'POST':
+                          case 'POST':
                                       curl_setopt($ch, CURLOPT_POST, true);
                                       curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
                           break;
@@ -202,15 +202,11 @@ class Api {
                                          $headers[0] = trim($h[0]); 
                                }
                        }
-
                        return $headers;
                       
                    } else {
-
                        return http_parse_headers($raw_headers);
-
                    } 
-                              
            }
 
            public function get($url, $params = "", $headers = "") 
