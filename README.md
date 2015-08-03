@@ -32,17 +32,22 @@ $response = $api->get($url, null, null);
 
 if ($api->isOk()) { // checks for Code:200
 
-    if ($response->isError()) { // if response of api has error
-        print($response->getErrorMessage());
-    } else {
-        // $dataAsObject = $response->getJson();
-        // echo $dataAsObject->username;
-        // echo $api->getContentType();
-        
-        print("<pre>");
-        print_r($response->getJsonAsArray());
-    }
+    if ($result->isValidResponse()) {
 
+        if ($response->isError()) { // if response of api has error
+            print($response->getErrorMessage());
+        } else {
+            // $dataAsObject = $response->getJson();
+            // echo $dataAsObject->username;
+            // echo $api->getContentType();
+            print("<pre>");
+            print_r($response->getJsonAsArray());
+        }
+
+    } else {
+            print("Invalid phplicengine response.");
+    }
+    
 } else { // api responseCode is not 200:OK
 
     if ($api->isCurlError()) {
@@ -50,6 +55,5 @@ if ($api->isOk()) { // checks for Code:200
     } else {
         die("Error ".$api->getResponseCode()." : ".$api->getReasonPhrase());
     }
-
 }
 ```
