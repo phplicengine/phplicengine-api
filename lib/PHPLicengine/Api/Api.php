@@ -172,7 +172,7 @@ class Api {
                   }
                   $this->curlInfo = curl_getinfo($ch);
                   curl_close($ch);
-                  return new Result($this->_getBody());
+                  return new Result($this->_getBody(), $this->getHeaders());
            }
 
            private function _parseHeaders($raw_headers) 
