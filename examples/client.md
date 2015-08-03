@@ -10,28 +10,33 @@ Sample:
 
 ```php
 use PHPLicengine\Service\Client;
-$api = new Client ($base_url, $api_key);
-$response = $api->getClientById(1);
+$client = new Client ($base_url, $api_key);
+$response = $client->getClientById(1);
 
-if ($api->isOk()) { //checks for Code:200
+if ($response->getApi()->isOk()) { //checks for Code:200
 
-    if ($response->isError()) { // if response of api has error
-        print($response->getErrorMessage());
+    if ($response->isValidResponse()) {
+    
+        if ($response->isError()) { // if response of api has error
+            print($response->getErrorMessage());
+        } else {
+            // $dataAsObject = $response->getJson();
+            // echo $dataAsObject->username;
+            // echo $response->getApi()->getContentType();
+            print("<pre>");
+            print_r($response->getJsonAsArray());
+        }
+    
     } else {
-        // $dataAsObject = $response->getJson();
-        // echo $dataAsObject->username;
-        // echo $api->getContentType();
-
-        print("<pre>");
-        print_r($response->getJsonAsArray());
+        print("Invalid PHPLicengine response.");
     }
-
+    
 } else { // api responseCode is not 200:OK
 
-    if ($api->isCurlError()) {
-        die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
+    if ($response->getApi()->isCurlError()) {
+        die("Curl Connection: ".$response->getApi()->getCurlErrno()." : ".$response->getApi()->getCurlError());
     } else {
-        die("Error ".$api->getResponseCode()." : ".$api->getReasonPhrase());
+        die("Error ".$response->getApi()->getResponseCode()." : ".$response->getApi()->getReasonPhrase());
     }
 
 }
