@@ -8,6 +8,8 @@ Sample:
 
 ```php
 use PHPLicengine\Service\Client;
+$base_url = "http://www.mysite.com/phplicengine"; // no trailing slash!
+$api_key = "API key goes here";
 $api = new Client ($base_url, $api_key);
 $response = $api->getClientById(1);
 
