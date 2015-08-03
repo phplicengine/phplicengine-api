@@ -25,7 +25,7 @@ $api = new Api("API key goes here");
 $response = $api->get($url, null, null);
 
 // For debug purposes only:
-// print($api->getHeaders());
+// print_r($api->getHeaders());
 // print_r($api->getCurlInfo());
 // print($response->getBody());
 // exit;
