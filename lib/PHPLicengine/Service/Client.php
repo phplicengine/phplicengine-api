@@ -29,11 +29,13 @@ class Client (
       private $base_url;
       
       public function __construct ($base_url, $api_key = null)
+      {
              $this->api = new \PHPLicengine\Api($api_key);
              $this->base_url = $base_url;       
       }
       
-      public function getClientById ($clientId) {
+      public function getClientById ($clientId) 
+      {
              return $this->api->_call($this->base_url . '/api/client/' . $clientId);
       }
       
