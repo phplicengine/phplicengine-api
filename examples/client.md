@@ -13,16 +13,16 @@ $api_key = "API key goes here";
 $api = new Client ($base_url, $api_key);
 $response = $api->getClientById(1);
 
-if ($api->isOk()) { // checks for Code:200
+if ($response->isOk()) { // checks for Code:200
 
     if ($response->isValidResponse()) {
     
         if ($response->isError()) { // if response of api has error
             print($response->getErrorMessage());
         } else {
-            // $dataAsObject = $response->getJson();
+            // $dataAsObject = $response->getDecodedJson();
             // echo $dataAsObject->username;
-            // echo $api->getContentType();
+            // echo $response->getContentType();
             print("<pre>");
             print_r($response->getJsonAsArray());
         }
