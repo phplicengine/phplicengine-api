@@ -181,15 +181,18 @@ class Api {
                   return $this->curlInfo;
            }
 
-           public function isCurlError () {
+           public function isCurlError () 
+           {
                   return (bool) $this->curlErrno;
            }
 
-           public function getCurlErrno () {
+           public function getCurlErrno () 
+           {
                   return $this->curlErrno;
            }
 
-           public function getCurlError () {
+           public function getCurlError () 
+           {
                   return $this->curlError;
            }
 
