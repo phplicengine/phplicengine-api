@@ -109,12 +109,12 @@ class Result {
 
       public function isError () 
       {
-             return isset($this->getJson()->error) && $this->getJson()->error;
+             return isset($this->getDecodedJson()->error) && $this->getDecodedJson()->error;
       }
      
       public function getErrorMessage () 
       {
-             return $this->getJson()->message;
+             return $this->getDecodedJson()->message;
       }
 
       public function getBody()
