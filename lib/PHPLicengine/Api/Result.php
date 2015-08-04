@@ -56,6 +56,11 @@ class Result {
              return $this->body;
       }
 
+      public function getHeaders()
+      {
+             return $this->headers;
+      }
+
       public function getJson () 
       {
              return json_decode($this->body);
