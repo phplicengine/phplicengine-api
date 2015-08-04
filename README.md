@@ -25,8 +25,8 @@ $api = new Api("API key goes here");
 $response = $api->get($url, null, null);
 
 // For debug purposes only:
-// print_r($api->getHeaders());
 // print_r($api->getCurlInfo());
+// print_r($response->getHeaders());
 // print($response->getBody());
 // exit;
 
@@ -37,7 +37,7 @@ if ($api->isOk()) { // checks for Code:200
         if ($response->isError()) { // if response of api has error
             print($response->getErrorMessage());
         } else {
-            // $dataAsObject = $response->getJson();
+            // $dataAsObject = $response->getDecodedJson();
             // echo $dataAsObject->username;
             // echo $api->getContentType();
             print("<pre>");
