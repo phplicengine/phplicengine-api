@@ -146,19 +146,14 @@ class Api {
                    } 
            }
 
-           private function _getHeaderSize()
-           {
-                  return $this->curlInfo['header_size'];
-           }
-
            private function _getHeaders()
            {
-                  return $this->_parseHeaders(substr($this->response, 0, $this->_getHeaderSize()));
+                  return $this->_parseHeaders(substr($this->response, 0, $this->curlInfo['header_size']));
            }
 
            private function _getBody()
            {
-                  return substr($this->response, $this->_getHeaderSize());
+                  return substr($this->response, $this->curlInfo['header_size']);
            }
 
            public function get($url, $params = null, $headers = null) 
