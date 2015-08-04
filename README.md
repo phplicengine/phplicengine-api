@@ -30,7 +30,7 @@ $response = $api->get($url, null, null);
 // print($response->getBody());
 // exit;
 
-if ($api->isOk()) { // checks for Code:200
+if ($response->isOk()) { // checks for Code:200
 
     if ($result->isValidResponse()) {
 
@@ -39,7 +39,7 @@ if ($api->isOk()) { // checks for Code:200
         } else {
             // $dataAsObject = $response->getDecodedJson();
             // echo $dataAsObject->username;
-            // echo $api->getContentType();
+            // echo $response->getContentType();
             print("<pre>");
             print_r($response->getJsonAsArray());
         }
@@ -53,7 +53,7 @@ if ($api->isOk()) { // checks for Code:200
     if ($api->isCurlError()) {
         die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
     } else {
-        die("Error ".$api->getResponseCode()." : ".$api->getReasonPhrase());
+        die("Error ".$response->getResponseCode()." : ".$response->getReasonPhrase());
     }
 }
 ```
