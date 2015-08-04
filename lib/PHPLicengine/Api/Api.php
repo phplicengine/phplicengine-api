@@ -25,6 +25,7 @@ namespace PHPLicengine\Api;
 
 class Api {
 
+           protected $_api_key_var = 'X-API-Key';
            protected $_timeout = 30;
            protected $_verify_ssl = true;
            protected $_verify_host = 2;
@@ -158,7 +159,7 @@ class Api {
                   }
 
                   if (!empty($this->_api_key)) {
-                      $headers[] = 'X-API-Key: '.$this->_api_key;
+                      $headers[] = $this->_api_key_var.': '.$this->_api_key;
                   }
                   if (!empty($headers)) {
                       curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -210,6 +211,16 @@ class Api {
                    } 
            }
 
+           private function _getBody()
+           {
+                  return substr($this->response, $this->_getHeaderSize());
+           }
+
+           private function _getHeaderSize()
+           {
+                  return $this->curlInfo['header_size'];
+           }
+
            public function get($url, $params = "", $headers = "") 
            {
                   return $this->_call($url, $params, $headers, $method = "GET")      
@@ -230,14 +241,14 @@ class Api {
                   return $this->_call($url, $params, $headers, $method = "PUT")      
            }
 
+           public function getHeaders()
+           {
+                  return $this->_parseHeaders(substr($this->response, 0, $this->_getHeaderSize()));
+           }
+
            public function getResponseCode()
            {
                   return $this->curlInfo['http_code'];
-           }
-
-           public function getContentType()
-           {
-                  return $this->curlInfo['content_type'];
            }
 
            public function getReasonPhrase()
@@ -245,13 +256,53 @@ class Api {
                   return $this->reasonPhrases[$this->curlInfo['http_code']];
            }
 
-           public function isOk() 
+           public function getContentType()
            {
-                  return $this->curlInfo['http_code'] == 200;
+                  return $this->curlInfo['content_type'];
+           }
+
+           public function isOk()
+           {
+                   return ($this->curlInfo['http_code'] === 200);
+           }
+
+           public function isSuccess()
+           {
+                  return (200 <= $this->curlInfo['http_code'] && 300 > $this->curlInfo['http_code']);
+           }
+
+           public function isNotFound()
+           {
+                  return ($this->curlInfo['http_code'] === 404);
+           }
+
+           public function isInformational()
+           {
+                  return ($this->curlInfo['http_code'] >= 100 && $this->curlInfo['http_code'] < 200);
+           }
+
+           public function isRedirect()
+           {
+                  return (300 <= $this->curlInfo['http_code'] && 400 > $this->curlInfo['http_code']);
+           }
+
+           public function isClientError()
+           {
+                  return ($this->curlInfo['http_code'] < 500 && $this->curlInfo['http_code'] >= 400);
+           }
+
+           public function isServerError()
+           {
+                  return (500 <= $this->curlInfo['http_code'] && 600 > $this->curlInfo['http_code']);
+           }
+
+           public function getCurlInfo()
+           {
+                  return $this->curlInfo;
            }
 
            public function isCurlError () {
-                  return (bool)$this->curlErrno;
+                  return (bool) $this->curlErrno;
            }
 
            public function getCurlErrno () {
@@ -262,23 +313,4 @@ class Api {
                   return $this->curlError;
            }
 
-           public function getHeaders()
-           {
-                  return $this->_parseHeaders(substr($this->response, 0, $this->_getHeaderSize()));
-           }
-
-           private function _getBody()
-           {
-                  return substr($this->response, $this->_getHeaderSize());
-           }
-
-           private function _getHeaderSize()
-           {
-                  return $this->curlInfo['header_size'];
-           }
-
-           public function getCurlInfo()
-           {
-                  return $this->curlInfo;
-           }
 }
