@@ -34,7 +34,7 @@ if (!$api->isCurlError()) { // checks for Code:200
 
     if ($response->isOk()) { // checks for Code:200
 
-        if ($result->isValidResponse()) {
+        if ($response->isValidResponse()) {
 
             if ($response->isError()) { // if response of api has error
                 print($response->getErrorMessage());
