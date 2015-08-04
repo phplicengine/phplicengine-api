@@ -22,7 +22,7 @@
 #################################################
 
 namespace PHPLicengine\Api;
-use XMLParser\XMLparser;
+use XMLParser\XMLParser;
 
 class Result {
 
