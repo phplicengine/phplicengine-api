@@ -63,7 +63,7 @@ class Api {
                   $this->_api_key = $api_key; 
            } 
 
-           private function _call($url, $params = "", $headers = "", $method = "GET") 
+           private function _call($url, $params = null, $headers = null, $method = "GET") 
            {
                   $ch = curl_init();
                   curl_setopt($ch, CURLOPT_URL, $url);
@@ -161,22 +161,22 @@ class Api {
                   return substr($this->response, $this->_getHeaderSize());
            }
 
-           public function get($url, $params = "", $headers = "") 
+           public function get($url, $params = null, $headers = null) 
            {
                   return $this->_call($url, $params, $headers, $method = "GET")      
            }
            
-           public function post($url, $params = "", $headers = "") 
+           public function post($url, $params = null, $headers = null) 
            {
                   return $this->_call($url, $params, $headers, $method = "POST")      
            }
 
-           public function delete($url, $params = "", $headers = "") 
+           public function delete($url, $params = null, $headers = null) 
            {
                   return $this->_call($url, $params, $headers, $method = "DELETE")      
            }
 
-           public function put($url, $params = "", $headers = "") 
+           public function put($url, $params = null, $headers = null) 
            {
                   return $this->_call($url, $params, $headers, $method = "PUT")      
            }
