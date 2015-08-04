@@ -13,32 +13,33 @@ $api_key = "API key goes here";
 $api = new Client ($base_url, $api_key);
 $response = $api->getClientById(1);
 
-if ($response->isOk()) { // checks for Code:200
+if (!$api->isCurlError()) { // checks for Code:200
 
-    if ($response->isValidResponse()) {
-    
-        if ($response->isError()) { // if response of api has error
-            print($response->getErrorMessage());
+    if ($response->isOk()) { // checks for Code:200
+
+        if ($result->isValidResponse()) {
+
+            if ($response->isError()) { // if response of api has error
+                print($response->getErrorMessage());
+            } else {
+                // $dataAsObject = $response->getDecodedJson();
+                // echo $dataAsObject->username;
+                // echo $response->getContentType();
+                print("<pre>");
+                print_r($response->getJsonAsArray());
+            }
+
         } else {
-            // $dataAsObject = $response->getDecodedJson();
-            // echo $dataAsObject->username;
-            // echo $response->getContentType();
-            print("<pre>");
-            print_r($response->getJsonAsArray());
+            print("Invalid PHPLicengine response.");
         }
-    
-    } else {
-        print("Invalid PHPLicengine response.");
-    }
-    
-} else { // api responseCode is not 200:OK
 
-    if ($api->isCurlError()) {
-        die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
-    } else {
+    } else { // response code is not 200:Ok
         die("Error ".$response->getResponseCode()." : ".$response->getReasonPhrase());
     }
-
+    
+} else { // api curl Error happens.
+    
+        die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
 }
 
 ```
