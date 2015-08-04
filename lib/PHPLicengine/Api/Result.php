@@ -22,6 +22,7 @@
 #################################################
 
 namespace PHPLicengine\Api;
+use XMLParser\XMLparser;
 
 class Result {
 
@@ -135,6 +136,11 @@ class Result {
       public function getJsonAsArray () 
       {
              return json_decode($this->body, true);
+      }
+
+      public function getXmlAsArray () 
+      {
+             return XMLParser::decode($this->body);
       }
       
       public function getResponseCode()
