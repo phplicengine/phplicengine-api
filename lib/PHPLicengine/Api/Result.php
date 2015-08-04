@@ -61,7 +61,7 @@ class Result {
              return $this->headers;
       }
 
-      public function getJson () 
+      public function getDecodedJson() 
       {
              return json_decode($this->body);
       }
