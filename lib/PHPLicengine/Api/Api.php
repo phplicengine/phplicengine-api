@@ -98,7 +98,8 @@ class Api {
 
            public function __construct($api_key = null) 
            { 
-                  if (!function_exists('curl_init')) { 
+                  if (!function_exists('curl_init')) 
+                  { 
                       throw new Exception("cURL is not available. This API wrapper cannot be used."); 
                   } 
                   $this->setApiKey($api_key);
