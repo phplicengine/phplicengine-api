@@ -174,7 +174,7 @@ class Api {
                   }
                   $this->curlInfo = curl_getinfo($ch);
                   curl_close($ch);
-                  return new Result($this->_getBody(), $this->getHeaders());
+                  return new Result($this->_getBody(), $this->_getHeaders());
            }
 
            private function _parseHeaders($raw_headers) 
@@ -211,14 +211,19 @@ class Api {
                    } 
            }
 
-           private function _getBody()
-           {
-                  return substr($this->response, $this->_getHeaderSize());
-           }
-
            private function _getHeaderSize()
            {
                   return $this->curlInfo['header_size'];
+           }
+
+           private function _getHeaders()
+           {
+                  return $this->_parseHeaders(substr($this->response, 0, $this->_getHeaderSize()));
+           }
+
+           private function _getBody()
+           {
+                  return substr($this->response, $this->_getHeaderSize());
            }
 
            public function get($url, $params = "", $headers = "") 
@@ -239,11 +244,6 @@ class Api {
            public function put($url, $params = "", $headers = "") 
            {
                   return $this->_call($url, $params, $headers, $method = "PUT")      
-           }
-
-           public function getHeaders()
-           {
-                  return $this->_parseHeaders(substr($this->response, 0, $this->_getHeaderSize()));
            }
 
            public function getResponseCode()
