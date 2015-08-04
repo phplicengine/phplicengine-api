@@ -35,7 +35,7 @@ class Client extends \PHPLicengine\Api\Api {
       
       public function getClientById ($clientId) 
       {
-             return $this->_call($this->base_url . '/api/client/' . $clientId);
+             return $this->get($this->base_url . '/api/client/' . $clientId);
       }
       
 }
