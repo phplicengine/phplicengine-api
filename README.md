@@ -3,6 +3,18 @@ PHPLicengine API
 
 This code is still draft and not yet ready to use. Please do not download it yet.
 
+## Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Example](#example)
+* [License](#license)
+
+## Installation
+Versioning is the same as PHPLicengine. You should install the same version as your PHPLicengine or lower if there is not the same version.
+```
+composer require phplicengine/phplicengine-api x.x.x
+```
+
 ## Usage
 
 ```php
@@ -60,3 +72,7 @@ if (!$api->isCurlError()) { // checks for cURL error
 }
 
 ```
+
+## Example
+See [here](https://github.com/phplicengine/phplicengine-api/tree/master/examples)
+
