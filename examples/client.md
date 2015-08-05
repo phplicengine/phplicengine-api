@@ -7,7 +7,7 @@ $api = new \PHPLicengine\Service\Client($base_url, $api_key);
 
 #### GET /client/{client_id} - Get Client Info by id
 
-e.g. http://www.mysite.com/phplicengine/api/client/11
+e.g. http://www.mysite.com/phplicengine/api/client/1
 
 Service method:
 ```php
