@@ -13,7 +13,7 @@ $api_key = "API key goes here";
 $api = new Client ($base_url, $api_key);
 $response = $api->getClientById(1);
 
-if (!$api->isCurlError()) { // checks for Code:200
+if (!$api->isCurlError()) { // checks for cURL error
 
     if ($response->isOk()) { // checks for Code:200
 
