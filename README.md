@@ -30,7 +30,7 @@ $response = $api->get($url, null, null);
 // print($response->getBody());
 // exit;
 
-if (!$api->isCurlError()) { // checks for Code:200
+if (!$api->isCurlError()) { // checks for cURL error
 
     if ($response->isOk()) { // checks for Code:200
 
