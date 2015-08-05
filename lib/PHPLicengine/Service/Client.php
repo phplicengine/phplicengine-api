@@ -38,4 +38,14 @@ class Client extends \PHPLicengine\Api\Api {
              return $this->get($this->base_url . '/api/client/' . $clientId);
       }
       
+      public function getClientByUsername ($username) 
+      {
+             return $this->get($this->base_url . '/api/client/username/' . $username);
+      }
+
+      public function getClientByEmail ($email) 
+      {
+             return $this->get($this->base_url . '/api/client/email/' . $email);
+      }
+
 }
