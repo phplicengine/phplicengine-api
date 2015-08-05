@@ -44,6 +44,16 @@ if (!$api->isCurlError()) { // checks for cURL error
 
 ```
 
-#### * Get Client Info by email
+#### GET /client/email/{email} - Get Client Info by email
 
-#### * Get Client Info by username
+Service method:
+```php
+$response = $api->getClientByEmail($email);
+```
+
+#### GET /client/username/{username} - Get Client Info by username
+
+Service method:
+```php
+$response = $api->getClientByUsername($username);
+```
