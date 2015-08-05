@@ -4,6 +4,11 @@ All API URLs listed here must be prefixed by the root API URL, such as http://ww
 
 e.g. http://www.mysite.com/phplicengine/api/client/11
 
+Service method:
+```php
+$response = $api->getClientById(1);
+```
+
 Sample:
 
 ```php
