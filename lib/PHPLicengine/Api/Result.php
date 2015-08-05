@@ -108,6 +108,11 @@ class Result {
              return isset($this->headers[$this->validResponseHeader]) && (bool) $this->headers[$this->validResponseHeader];
       }
 
+      public function getReference () 
+      {
+             return $this->headers[$this->validResponseHeader];
+      }
+
       public function isError () 
       {
              return isset($this->getDecodedJson()->error) && $this->getDecodedJson()->error;
