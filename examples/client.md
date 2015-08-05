@@ -5,7 +5,7 @@ Service class:
 $api = new \PHPLicengine\Service\Client($base_url, $api_key);
 ```
 
-#### GET /client/{client_id} - Get Client Info by id
+#### * GET /client/{client_id} - Get Client Info by id
 
 e.g. http://www.mysite.com/phplicengine/api/client/1
 
@@ -54,14 +54,14 @@ if (!$api->isCurlError()) { // checks for cURL error
 
 ```
 
-#### GET /client/email/{email} - Get Client Info by email
+#### * GET /client/email/{email} - Get Client Info by email
 
 Service method:
 ```php
 $response = $api->getClientByEmail($email);
 ```
 
-#### GET /client/username/{username} - Get Client Info by username
+#### * GET /client/username/{username} - Get Client Info by username
 
 Service method:
 ```php
