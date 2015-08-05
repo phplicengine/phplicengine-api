@@ -76,3 +76,6 @@ if (!$api->isCurlError()) { // checks for cURL error
 ## Example
 See [here](https://github.com/phplicengine/phplicengine-api/tree/master/examples)
 
+## License
+PHPLicengine Api is distributed under the Apache License. See [License](https://github.com/phplicengine/phplicengine-api/blob/master/LICENSE)
+
