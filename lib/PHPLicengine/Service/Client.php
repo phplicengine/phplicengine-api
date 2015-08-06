@@ -22,30 +22,35 @@
 #################################################
 
 namespace PHPLicengine\Service;
+use PHPLicengine\Exception\ResponseException;
 
 class Client extends \PHPLicengine\Api\Api {
  
-      private $base_url;
+      private $url;
       
       public function __construct ($base_url, $api_key = null)
       {
              parent::__construct($api_key);
-             $this->base_url = $base_url;       
+             $this->url = $base_url.'/api';       
+
+             if ($this->get($this->url.'/')->isValidResponse()) {
+                 throw new ResponseException ("Invalid PHPLicengine URL.");
+             }
       }
       
       public function getClientById ($clientId) 
       {
-             return $this->get($this->base_url . '/api/client/' . $clientId);
+             return $this->get($this->url . '/client/' . intval($clientId));
       }
-      
+
       public function getClientByUsername ($username) 
       {
-             return $this->get($this->base_url . '/api/client/username/' . $username);
+             return $this->get($this->url . '/client/username/' . $username);
       }
 
       public function getClientByEmail ($email) 
       {
-             return $this->get($this->base_url . '/api/client/email/' . $email);
+             return $this->get($this->url . '/client/email/' . $email);
       }
-
+      
 }
