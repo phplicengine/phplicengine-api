@@ -23,6 +23,7 @@
 
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
+use PHPLicengine\Exception\CurlException;
 
 class Client extends \PHPLicengine\Api\Api {
  
@@ -33,8 +34,13 @@ class Client extends \PHPLicengine\Api\Api {
              parent::__construct($api_key);
              $this->url = $base_url.'/api';       
 
-             if (!$this->get($this->url.'/')->isValidResponse()) {
-                 throw new ResponseException ("Invalid PHPLicengine URL.");
+             $response = $this->get($this->url.'/');
+             if (!$this->isCurlError()) {
+                 if (!$response->isValidResponse()) {
+                     throw new ResponseException ("Invalid PHPLicengine URL.");
+                 }
+             } else {
+                 throw new CurlException ("Curl Connection: ".$this->getCurlErrno()." : ".$this->getCurlError());
              }
       }
       
