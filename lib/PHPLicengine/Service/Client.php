@@ -33,7 +33,7 @@ class Client extends \PHPLicengine\Api\Api {
              parent::__construct($api_key);
              $this->url = $base_url.'/api';       
 
-             if ($this->get($this->url.'/')->isValidResponse()) {
+             if (!$this->get($this->url.'/')->isValidResponse()) {
                  throw new ResponseException ("Invalid PHPLicengine URL.");
              }
       }
