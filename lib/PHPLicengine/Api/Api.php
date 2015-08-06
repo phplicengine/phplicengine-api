@@ -87,6 +87,13 @@ class Api {
                                       curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
                           break;
                           case 'POST':
+                                      if (isset($params['files'])) {
+                                          foreach ($params['files'] as $file) {  
+                                                   $fileUpload = new FileUpload($file['filename']);
+                                                   $params[] = $fileUpload->getCurlFileObject();
+                                          }
+                                          unset($params['files']);
+                                      }
                                       curl_setopt($ch, CURLOPT_POST, true);
                                       curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
                           break;
