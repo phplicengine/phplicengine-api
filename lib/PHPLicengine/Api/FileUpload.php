@@ -36,7 +36,7 @@ class FileUpload {
              }
              if (!extension_loaded("fileinfo")) 
              {
-	           throw new FileException ("For cURL upload, 'fileinfo' PHP extension is required.");
+	         throw new FileException ("For cURL upload, 'fileinfo' PHP extension is required.");
              }
              $this->_filename = $filename;
       }
