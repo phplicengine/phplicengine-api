@@ -25,13 +25,13 @@ try {
      $response = $api->getClientById(1);
      if ($response->isError()) { // if response of api has error
         print($response->getErrorMessage());
-    } else {
+     } else {
         // $dataAsObject = $response->getDecodedJson();
         // echo $dataAsObject->username;
         // echo $response->getContentType();
         print("<pre>");
         print_r($response->getJsonAsArray());
-    }
+     }
 } catch (\PHPLicengine\Exception\ResponseException $e) {
     echo $e->getMessage();
 }
