@@ -29,7 +29,7 @@ class Client extends \PHPLicengine\Api\Api {
  
       private $url;
       
-      public function __construct ($base_url, $api_key = null)
+      public function __construct ($base_url, $api_key)
       {
              parent::__construct($api_key);
              $this->url = $base_url.'/api';       
