@@ -22,6 +22,7 @@
 #################################################
 
 namespace PHPLicengine\Api;
+use PHPLicengine\Exception\FileException;
 
 class FileUpload {
 
@@ -29,13 +30,21 @@ class FileUpload {
 
       public function __construct($filename)
       {
+             if (version_compare("5.5.0", PHP_VERSION, ">")) 
+             {
+                 throw new FileException ("For cURL upload, php >= 5.5.0 is required.");
+             }
+             if (!extension_loaded("fileinfo")) 
+             {
+	           throw new FileException ("For cURL upload, 'fileinfo' PHP extension is required");
+             }
              $this->_filename = $filename;
       }
 
       public function getCurlFileObject() 
       {
              if (!file_exists($this->_filename) || !is_readable($this->_filename)) {
-                 throw new \Exception ("Could not read $this->_filename to upload.");
+                 throw new FileException ("Could not read $this->_filename to upload.");
              }
              return new \CURLFile($this->getFilename(), $this->getType());
       } 
