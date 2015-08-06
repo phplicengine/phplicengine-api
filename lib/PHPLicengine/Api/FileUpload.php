@@ -54,7 +54,7 @@ class FileUpload {
              if (strpos($this->_filename, '/') !== false || strpos($this->_filename, '\\') !== false) {
                  return basename($this->_filename);
              } else {
-                return $this->_filename;
+                 return $this->_filename;
              }
       }
 
