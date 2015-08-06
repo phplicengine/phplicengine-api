@@ -1,6 +1,7 @@
-## Upload Files
+# Upload Files
 
-You can upload files with post() method and with this array structure as post parameter. Note that 'filename' must be absolute path to file.
+You can upload files with post() method and with this array structure as post parameter. 
+Note that 'filename' must be absolute path to file.
 
 
 ```php
