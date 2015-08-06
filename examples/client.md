@@ -32,8 +32,8 @@ try {
         print("<pre>");
         print_r($response->getJsonAsArray());
      }
-} catch (\PHPLicengine\Exception\ResponseException $e) {
-    echo $e->getMessage();
+} catch (\Exception $e) {
+     echo $e->getMessage();
 }
 
 
