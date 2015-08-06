@@ -17,6 +17,9 @@
         "ext-curl": "*",
         "jtrumbull/xml-parser": "~1.0"
     },
+    "suggest": { 
+        "ext-fileinfo": "If you want to use file upload."
+    }, 
     "autoload": {
         "psr-4": {
             "PHPLicengine\\": "lib/PHPLicengine"
