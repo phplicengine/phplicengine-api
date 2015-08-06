@@ -22,6 +22,7 @@
 #################################################
 
 namespace PHPLicengine\Api;
+use PHPLicengine\Exception\CurlException;
 
 class Api {
 
@@ -36,7 +37,7 @@ class Api {
            { 
                   if (!function_exists('curl_init')) 
                   { 
-                      throw new Exception("cURL is not available. This API wrapper cannot be used."); 
+                      throw new CurlException ("cURL is not available. This API wrapper cannot be used."); 
                   } 
                   $this->setApiKey($api_key);
            }
