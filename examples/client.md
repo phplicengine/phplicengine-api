@@ -24,19 +24,16 @@ try {
      $api = new Client ($base_url, $api_key);
      $response = $api->getClientById(1);
      if ($response->isError()) { // if response of api has error
-        print($response->getErrorMessage());
+         print($response->getErrorMessage());
      } else {
-        // $dataAsObject = $response->getDecodedJson();
-        // echo $dataAsObject->username;
-        // echo $response->getContentType();
-        print("<pre>");
-        print_r($response->getJsonAsArray());
+         // $dataAsObject = $response->getDecodedJson();
+         // echo $dataAsObject->username;
+         // echo $response->getReference();
+         print_r($response->getJsonAsArray());
      }
 } catch (\Exception $e) {
      echo $e->getMessage();
 }
-
-
 ```
 
 #### GET /client/email/{email} - Get Client Info by email
