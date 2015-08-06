@@ -10,11 +10,11 @@ Array
         (
             [0] => Array
                 (
-                    [filename] => /path/to/file2.txt
+                    [filename] => /path/to/file1.txt
                 )
             [1] => Array
                 (
-                    [filename] => /path/to/file1.txt
+                    [filename] => /path/to/file2.txt
                 )
         )
     [foo] => bar
