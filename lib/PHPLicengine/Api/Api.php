@@ -63,6 +63,11 @@ class Api {
                   $this->_api_key = $api_key; 
            } 
 
+           public function setApiKeyVar($api_key_var) 
+           { 
+                  $this->_api_key_var = $api_key_var; 
+           } 
+
            private function _call($url, $params = null, $headers = null, $method = "GET") 
            {
                   $ch = curl_init();
