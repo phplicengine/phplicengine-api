@@ -26,7 +26,7 @@ use XMLParser\XMLParser;
 
 class Result {
 
-      protected $validResponseHeader = 'x-phplicen-response';
+      protected $_validResponseHeader = 'x-phplicen-response';
       protected $error;
       protected $message;
       protected $headers;
@@ -103,14 +103,19 @@ class Result {
              $this->curlInfo = $curlInfo;
       }
 
+      public function setValidResponseHeader ($validResponseHeader) 
+      {
+             $this->_validResponseHeader = $validResponseHeader;
+      }
+
       public function isValidResponse () 
       {
-             return isset($this->headers[$this->validResponseHeader]) && (bool) $this->headers[$this->validResponseHeader];
+             return isset($this->headers[$this->_validResponseHeader]) && (bool) $this->headers[$this->_validResponseHeader];
       }
 
       public function getReference () 
       {
-             return $this->headers[$this->validResponseHeader];
+             return $this->headers[$this->_validResponseHeader];
       }
 
       public function isError () 
