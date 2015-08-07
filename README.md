@@ -1,7 +1,7 @@
 # API
 PHPLicengine API
 
-You can use this API library for any needs, not necessarily for PHPLicengine API. This code is still draft and not yet ready to use. Please do not download it yet.
+You can use this API library for any needs, not necessarily for PHPLicengine API.
 
 ## Contents
 * [Installation](#installation)
