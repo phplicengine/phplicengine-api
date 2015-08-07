@@ -72,7 +72,7 @@ if (!$api->isCurlError()) { // checks for cURL error
     }
     
 } else { // api curl Error happens.
-        die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
+    die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
 }
 ```
 
