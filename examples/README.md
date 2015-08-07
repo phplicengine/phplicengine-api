@@ -2,7 +2,7 @@
 
 ## Contents
 * [Client service](https://github.com/phplicengine/phplicengine-api/edit/master/examples/Client.md)
-* [File upload](https://github.com/phplicengine/phplicengine-api/edit/master/examples/FileUpload.md)
+* [File upload](https://github.com/phplicengine/phplicengine-api/blob/master/examples/FileUpload.md)
 
 ## Usage
 You can directly call Api class for your PHPLicengine API, but for your convenience we've created service classes that you can call them instead of Api class, for example see [Client service](https://github.com/phplicengine/phplicengine-api/blob/master/examples/client.md) class. 
