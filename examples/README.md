@@ -2,7 +2,7 @@
 
 ## Contents
 * [Client service](https://github.com/phplicengine/phplicengine-api/blob/master/examples/client.md)
-* [File upload](https://github.com/phplicengine/phplicengine-api/blob/master/examples/FileUpload.md)
+* [Upload Files](#upload_files)
 * [Custom cURL Options](#custom-curl-options)
 
 ## Usage
@@ -23,4 +23,26 @@ $api->setCurlCallback(function($ch, $params, $headers, $method) {
       curl_setopt($ch, CURLOPT_USERPWD, "username:password");
 }); 
 $api->post($url, $params, $headers);
+```
+
+## Upload Files
+
+You can upload files with POST method and with this array structure as post parameter. Note that 'filename' must be absolute path to file.
+
+```php
+Array
+(
+    [files] => Array
+        (
+            [0] => Array
+                (
+                    [filename] => /path/to/file1.txt
+                )
+            [1] => Array
+                (
+                    [filename] => /path/to/file2.txt
+                )
+        )
+    [foo] => bar
+)
 ```
