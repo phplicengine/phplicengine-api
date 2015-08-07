@@ -1,7 +1,7 @@
 # API
 
 ## Contents
-* [Client service](https://github.com/phplicengine/phplicengine-api/edit/master/examples/Client.md)
+* [Client service](https://github.com/phplicengine/phplicengine-api/blob/master/examples/client.md)
 * [File upload](https://github.com/phplicengine/phplicengine-api/blob/master/examples/FileUpload.md)
 
 ## Usage
