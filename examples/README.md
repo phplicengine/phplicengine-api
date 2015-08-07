@@ -19,7 +19,7 @@ $api = new Api();
 $api->setCurlCallback(function($ch, $params, $headers, $method) { 
       curl_setopt($ch, CURLOPT_USERAGENT, 'some agent'); 
       curl_setopt($ch, CURLOPT_COOKIE, 'foo=bar'); 
-      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC) ; 
+      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
       curl_setopt($ch, CURLOPT_USERPWD, "username:password");
 }); 
 $api->post($url, $params, $headers);
