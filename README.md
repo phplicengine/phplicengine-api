@@ -16,7 +16,8 @@ You can use this API library for any needs, not necessarily for PHPLicengine API
 You can directly call Api class for your PHPLicengine API, but for your convenience we've created service classes that you can call them instead of Api class, for example see [Client service](https://github.com/phplicengine/phplicengine-api/blob/master/examples/client.md) class. 
 
 ## Installation
-Versioning is the same as PHPLicengine. If you want to use PHPLicengine service classes, you should install the same version as your PHPLicengine or lower if there is not the same version.
+Versioning is the same as PHPLicengine. If you want to use PHPLicengine service classes, you should install the same version as your PHPLicengine or lower if there is not the same version. For general usage you can install any version as desired.
+
 ```
 composer require phplicengine/phplicengine-api x.x.x
 ```
