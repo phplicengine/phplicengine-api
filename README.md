@@ -77,7 +77,6 @@ if (!$api->isCurlError()) { // checks for cURL error
 ```
 
 ## Manual
-See [here](https://github.com/phplicengine/phplicengine-api/tree/master/examples).
 
 #### Custom cURL Options
 If you need to add some CURLOPT_* constants that are not enabled by default, you can call setCurlCallback() method to add them.
@@ -95,7 +94,6 @@ $api->post($url, $params, $headers);
 ```
 
 #### Upload Files
-
 You can upload files with POST method and with this array structure as post parameter. Note that 'filename' must be absolute path to file.
 
 ```php
@@ -115,6 +113,9 @@ Array
     [foo] => bar
 )
 ```
+
+#### Service Classes
+For service classes usage, See [here](https://github.com/phplicengine/phplicengine-api/tree/master/examples).
 
 ## License
 PHPLicengine Api is distributed under the Apache License. See [License](https://github.com/phplicengine/phplicengine-api/blob/master/LICENSE).
