@@ -1,7 +1,7 @@
 # API
 PHPLicengine API
 
-You can use this API library for any needs, not necessarily for PHPLicengine API.
+You can use this API library for any needs, not necessarily for PHPLicengine API. With PHPLicengine API library you can contact with any RESTApi server and receive response as json/xml and parse them.
 
 ## Contents
 * [Usage](#usage)
