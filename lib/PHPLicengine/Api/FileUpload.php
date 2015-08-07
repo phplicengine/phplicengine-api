@@ -46,7 +46,7 @@ class FileUpload {
              if (!file_exists($this->_filename) || !is_readable($this->_filename)) {
                  throw new FileException ("Could not read $this->_filename to upload.");
              }
-             return new \CURLFile($this->getFilename(), $this->getType());
+             return new \CURLFile($this->getFilename(), $this->getMimeType());
       } 
 
       public function getFilename()
@@ -58,7 +58,7 @@ class FileUpload {
              }
       }
 
-      public function getType()
+      public function getMimeType()
       {
              $finfo = new \finfo(FILEINFO_MIME_TYPE);
              return $finfo->file($this->_filename);
