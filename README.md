@@ -87,7 +87,7 @@ if (!$api->isCurlError()) { // checks for cURL error
 ```
 
 NOTE: Usually RESTApi servers return a json response with 'error' and ' message' elements if an error occurs.
-If your RESTApi server returns another format, you'd need to customize isError() and getErrorMessage() methods in Result class.
+If your RESTApi server returns another format, you'd need to customize [isError()](https://github.com/phplicengine/phplicengine-api/blob/master/lib/PHPLicengine/Api/Result.php#L121) and [getErrorMessage()](https://github.com/phplicengine/phplicengine-api/blob/master/lib/PHPLicengine/Api/Result.php#L126) methods in Result class.
 
 ## Manual
 
