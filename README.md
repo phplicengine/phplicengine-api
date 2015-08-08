@@ -41,9 +41,9 @@ $api = new Api();
 // timeout is set to 30 by default. You can use below to change it if needed.
 // $api->setTimeout(60);
 
+// get(), post(), delete(), put() methods are available.
 // first parameter is url, second is query as array, third is header as array.
 // Only first parameter (i.e. $url) is required.
-// get(), post(), delete(), put() methods are available.
 $response = $api->get($url, null, null);
 
 // For debug purposes only:
