@@ -81,10 +81,13 @@ if (!$api->isCurlError()) { // checks for cURL error
         die("Error ".$response->getResponseCode()." : ".$response->getReasonPhrase());
     }
     
-} else { // api curl Error happens.
+} else { // api curl Error occurs.
     die("Curl Connection: ".$api->getCurlErrno()." : ".$api->getCurlError());
 }
 ```
+
+NOTE: Usually RESTApi servers return a json response with 'error' and ' message' elements if an error occurs.
+If your RESTApi server returns another format, you'd need to customize isError() and getErrorMessage() methods in Result class.
 
 ## Manual
 
