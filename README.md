@@ -27,7 +27,11 @@ composer require phplicengine/phplicengine-api x.x.x
 
 use PHPLicengine\Api;
 
-$api = new Api("API key goes here");
+$api = new Api();
+
+// If your RESTApi server requires an Api key header, you can pass it to constructor of Api class:
+// $api = new Api("API key goes here.");
+// $api->setApiKeyVar("X-RESTAapi-Key");
 
 // SSL verification is enabled by default. You can use below to disable it.
 // $api->disableSslVerification();
