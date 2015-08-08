@@ -36,8 +36,12 @@ class Client extends \PHPLicengine\Api\Api {
 
              $response = $this->get($this->url.'/');
              if (!$this->isCurlError()) {
-                 if (!$response->isValidResponse()) {
-                     throw new ResponseException ("Invalid PHPLicengine URL.");
+                 if ($response->isOk()) {
+                     if (!$response->isValidResponse()) {
+                         throw new ResponseException ("Invalid PHPLicengine URL.");
+                     }
+                 } else {
+                     throw new ResponseException ("Error ".$response->getResponseCode()." : ".$response->getReasonPhrase());
                  }
              } else {
                  throw new CurlException ("Curl Connection: ".$this->getCurlErrno()." : ".$this->getCurlError());
