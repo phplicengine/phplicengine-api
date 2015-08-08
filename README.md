@@ -74,7 +74,7 @@ if (!$api->isCurlError()) { // checks for cURL error
             }
 
         } else {
-            print("Invalid PHPLicengine response.");
+            print("Invalid server response.");
         }
 
     } else { // response code is not 200:Ok
