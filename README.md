@@ -25,7 +25,7 @@ composer require phplicengine/phplicengine-api x.x.x
 ## Sample
 ```php
 
-use PHPLicengine\Api;
+use PHPLicengine\Api\Api;
 
 $api = new Api();
 
