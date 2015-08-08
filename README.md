@@ -56,7 +56,8 @@ if (!$api->isCurlError()) { // checks for cURL error
 
     if ($response->isOk()) { // checks for Code:200
     
-        // If your RESTApi server returns a particular header as a valid response, you can set here:
+        // If your RESTApi server returns a particular header as a valid response, 
+        // you can set here:
         $response->setValidResponseHeader("X-ApiServer-Response");
         
         // This checks if the valid response header above is available or not.
