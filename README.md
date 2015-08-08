@@ -69,6 +69,8 @@ if (!$api->isCurlError()) { // checks for cURL error
                 // $dataAsObject = $response->getDecodedJson();
                 // echo $dataAsObject->username;
                 // echo $response->getContentType();
+                // You can get X-ApiServer-Response header value like below:
+                // echo $response->getReference();
                 print("<pre>");
                 print_r($response->getJsonAsArray());
             }
