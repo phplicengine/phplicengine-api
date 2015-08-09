@@ -49,3 +49,18 @@ Service method:
 ```php
 $response = $api->getClientByUsername($username);
 ```
+
+#### GET /client/usergroup/{id} - Get Clients Info by usergroup
+
+Service method:
+```php
+$response = $api->getClientsByUsergroup(1);
+```
+
+#### GET /client/status/{id} - Get Clients Info by status
+0 = pending, 1 = active, 2 = cancel, 3 = fraud
+
+Service method:
+```php
+$response = $api->getClientsByStatus("fraud");
+```
