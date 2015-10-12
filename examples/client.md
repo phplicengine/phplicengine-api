@@ -5,7 +5,7 @@ Service class:
 $api = new \PHPLicengine\Service\Client($base_url, $api_key);
 ```
 
-#### GET /client/{client_id} - Get Client Info by id
+#### GET /client/{client_id} - Get Client Info by id (v2.1.0)
 
 e.g. http://www.mysite.com/phplicengine/api/client/1
 
@@ -36,28 +36,28 @@ try {
 }
 ```
 
-#### GET /client/email/{email} - Get Client Info by email
+#### GET /client/email/{email} - Get Client Info by email (v2.1.0)
 
 Service method:
 ```php
 $response = $api->getClientByEmail($email);
 ```
 
-#### GET /client/username/{username} - Get Client Info by username
+#### GET /client/username/{username} - Get Client Info by username (v2.1.0)
 
 Service method:
 ```php
 $response = $api->getClientByUsername($username);
 ```
 
-#### GET /client/usergroup/{id} - Get Clients Info by usergroup
+#### GET /client/usergroup/{id} - Get Clients Info by usergroup (v2.1.0)
 
 Service method:
 ```php
 $response = $api->getClientsByUsergroup(1);
 ```
 
-#### GET /client/status/{id} - Get Clients Info by status
+#### GET /client/status/{id} - Get Clients Info by status (v2.1.0)
 0 = pending, 1 = active, 2 = cancel, 3 = fraud
 
 Service method:
