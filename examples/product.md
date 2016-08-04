@@ -27,7 +27,7 @@ try {
          print($response->getErrorMessage());
      } else {
          // $dataAsObject = $response->getDecodedJson();
-         // echo $dataAsObject->username;
+         // echo $dataAsObject->productName;
          // echo $response->getReference();
          print_r($response->getJsonAsArray());
      }
