@@ -14,12 +14,11 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "ext-curl": "*",
-        "jtrumbull/xml-parser": "dev-master"
+        "ext-curl": "*"
     },
     "suggest": { 
         "ext-fileinfo": "If you want to use file upload.",
-        "jtrumbull/xml-parser": "dev-master"
+        "jtrumbull/xml-parser": "dev-master, to use getXmlAsArray() method in Result class."
     }, 
     "autoload": {
         "psr-4": {
