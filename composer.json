@@ -18,7 +18,8 @@
         "jtrumbull/xml-parser": "dev-master"
     },
     "suggest": { 
-        "ext-fileinfo": "If you want to use file upload."
+        "ext-fileinfo": "If you want to use file upload.",
+        "jtrumbull/xml-parser": "dev-master"
     }, 
     "autoload": {
         "psr-4": {
