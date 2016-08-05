@@ -14,10 +14,10 @@ Service method:
 $order['clientId'] = 1; // required.
 $order['orderItems'][]['productId'] = 2; // required.
 
-$postvars['payType'] = "PayPal"; // optional.
-$postvars['amount'] = 10.00; // optional. will be set as 00.00 if missing.
-$postvars['referer'] = $_COOKIE['jamcom']; // optional'
-$postvars['coupon'] = "SOMETHING"; // optional.
+$order['payType'] = "PayPal"; // optional.
+$order['amount'] = 10.00; // optional. will be set as 00.00 if missing.
+$order['referer'] = $_COOKIE['jamcom']; // optional'
+$order['coupon'] = "SOMETHING"; // optional.
 
 $response = $api->addOrder($order);
 ```
@@ -25,7 +25,7 @@ $response = $api->addOrder($order);
 Sample:
 
 ```php
-use PHPLicengine\Service\Product;
+use PHPLicengine\Service\Order;
 $base_url = "http://www.mysite.com/phplicengine"; // no trailing slash!
 $api_key = "API key goes here";
 try {
@@ -43,9 +43,51 @@ try {
 }
 ```
 
+```
+
+Response:
+
+Array
+(
+    [orderItems] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 
+                    [orderId] => 
+                    [productId] => 
+                    [setupFee] => 
+                    [amount] => 
+                    [tp1] => 
+                    [term] => 
+                    [supportPeriod] => 
+                    [status] => 
+                    [lastRenewalDate] => 
+                    [nextRenewalDate] => 
+                    [nextInvoiceDate] => 
+                )
+        )
+    [order] => Array
+        (
+            [id] => 
+            [orderId] => 
+            [clientId] => 
+            [orderedOn] => 
+            [payType] => 
+            [amount] => 
+            [status] => 
+            [referer] => 
+            [coupon] => 
+            [note] => 
+        )
+)
+```
+
 #### POST /order/change/status - Change Order Status (v2.?.?)
+
+0 = pending, 1 = active, 2 = expired, 3 = cancel
 
 Service method:
 ```php
-$response = $api->changeOrderStatus($id, $status);
+$response = $api->changeOrderStatus($id, "active");
 ```
