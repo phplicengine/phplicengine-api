@@ -1,6 +1,6 @@
 <?php
 
-// Product.php
+// Order.php
 #################################################
 ## PHPLicengine
 ##
@@ -25,7 +25,7 @@ namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
 
-class Product extends \PHPLicengine\Api\Api {
+class Order extends \PHPLicengine\Api\Api {
  
       private $url;
       
