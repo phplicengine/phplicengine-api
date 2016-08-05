@@ -43,10 +43,9 @@ try {
 }
 ```
 
-```
-
 Response:
 
+```
 Array
 (
     [orderItems] => Array
