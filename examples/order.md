@@ -29,7 +29,7 @@ use PHPLicengine\Service\Order;
 $base_url = "http://www.mysite.com/phplicengine"; // no trailing slash!
 $api_key = "API key goes here";
 try {
-     $api = new Product ($base_url, $api_key);
+     $api = new Order ($base_url, $api_key);
      $response = $api->addOrder($order);
      if ($response->isError()) { // if response of api has error
          print($response->getErrorMessage());
