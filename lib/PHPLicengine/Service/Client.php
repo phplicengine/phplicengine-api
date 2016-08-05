@@ -74,7 +74,7 @@ class Client extends \PHPLicengine\Api\Api {
             $_status['active'] = 1;
             $_status['cancel'] = 2;
             $_status['fraud'] = 3;
-            return $this->get($this->url . '/client/status/' . $_status[$status]);
+            return $this->get($this->url . '/client/status/' . $_status[strtolower($status)]);
       }
       
 }
