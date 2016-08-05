@@ -56,7 +56,12 @@ class Product extends \PHPLicengine\Api\Api {
 
       public function changeOrderStatus ($id, $status) 
       {
-             
-             return $this->get($this->url . '/order/change/status', );
+             $_status['pending'] = 0;
+             $_status['active'] = 1;
+             $_status['expired'] = 2;
+             $_status['cancel'] = 3;
+             $data['status'] = $_status[strtolower($status)];
+             $data['id'] = $id;
+             return $this->post($this->url . '/order/change/status', $data);
       }
 }
