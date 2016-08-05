@@ -11,9 +11,9 @@ e.g. http://www.mysite.com/phplicengine/api/license/add
 
 Service method:
 ```php
-$productId = 2; // required.
+$orderItemId = 2; // required.
 
-$response = $api->addLicense($license);
+$response = $api->addLicense($orderItemId);
 ```
 
 Sample:
@@ -24,7 +24,7 @@ $base_url = "http://www.mysite.com/phplicengine"; // no trailing slash!
 $api_key = "API key goes here";
 try {
      $api = new License ($base_url, $api_key);
-     $response = $api->addLicense($productId);
+     $response = $api->addLicense($orderItemId);
      if ($response->isError()) { // if response of api has error
          print($response->getErrorMessage());
      } else {
@@ -42,7 +42,7 @@ Response (if license type is remote):
 ```
 Array
 (
-    [orderId] => 1
+    [orderId] => 2
     [status] => 0
     [locked] => 0
     [domainName] => 
@@ -65,7 +65,7 @@ Response (if license type is ionCube):
 ```
 Array
 (
-    [orderId] => 
+    [orderId] => 2
     [status] => 0
     [locked] => 0
     [domainName] => 
@@ -88,7 +88,7 @@ Array
 
 Service method:
 ```php
-$response = $api->changeLicenseStatus($productId, "active");
+$response = $api->changeLicenseStatus($orderItemId, "active");
 ```
 
 Respnse:
