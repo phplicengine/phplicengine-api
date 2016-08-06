@@ -86,11 +86,13 @@ Service method:
 ```php
 // Required:
 $client['username'] = "";
-$client['password'] = ""; // might be plain, md5() or password_hash()
+$client['password'] = ""; // might be plain, md5() or password_hash().
 $client['email'] = "";
 $client['firstName'] = "";
 $client['lastName'] = "";
 $client['usergroup_id'] = "1";
+
+$client['ip'] = ""; // recommended.
 
 // Followings may or may not be required depending on your Settings -> Form Settings
 $client['addr1'] = "";
