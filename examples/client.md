@@ -78,3 +78,34 @@ Respnse:
 ```
 {"message":"success"}
 ```
+
+#### POST /client/add - Add Client Status (v2.?.?)
+
+
+Service method:
+```php
+// Required:
+$client['username'] = "";
+$client['password'] = ""; // might be plain, md5() or password_hash()
+$client['email'] = "";
+$client['firstName'] = "";
+$client['lastName'] = "";
+$client['usergroup_id'] = "1";
+
+// Followings may or may not be required depending on your Settings -> Form Settings
+$client['addr1'] = "";
+$client['addr2'] = "";
+$client['company'] = "";
+$client['stchoice'] = ""; // 1 = US/CA states, 2 = non-US/CA states
+$client['state'] = "";
+$client['country'] = "us"; // 2-digits ISO
+$client['phone'] = "";
+$client['countryCode'] = "";
+$client['fax'] = "";
+$client['zip'] = "";
+$client['custom1'] = "";
+
+$response = $api->addClient($client);
+```
+
+
