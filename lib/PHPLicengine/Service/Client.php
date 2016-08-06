@@ -77,4 +77,20 @@ class Client extends \PHPLicengine\Api\Api {
             return $this->get($this->url . '/client/status/' . $_status[strtolower($status)]);
       }
       
+      public function addClient ($data) 
+      {
+            return $this->post($this->url . '/client/add', $data);
+      }
+
+      public function changeClientStatus ($id, $tatus) 
+      {
+            $_status['pending'] = 0;
+            $_status['active'] = 1;
+            $_status['cancel'] = 2;
+            $_status['fraud'] = 3;
+            $data['status'] = $_status[strtolower($status)];
+            $data['id'] = $id;
+            return $this->post($this->url . '/client/change/status', $data);
+      }
+ 
 }
