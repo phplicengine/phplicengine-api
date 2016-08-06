@@ -64,3 +64,17 @@ Service method:
 ```php
 $response = $api->getClientsByStatus("fraud");
 ```
+
+#### POST /client/change/status - Change Client Status (v2.?.?)
+
+0 = pending, 1 = active, 2 = cancel, 3 = fraud
+
+Service method:
+```php
+$response = $api->changeClientStatus($clientId, "active");
+```
+
+Respnse:
+```
+{"message":"success"}
+```
