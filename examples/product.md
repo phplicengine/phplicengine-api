@@ -5,7 +5,7 @@ Service class:
 $api = new \PHPLicengine\Service\Product($base_url, $api_key);
 ```
 
-#### GET /product/{product_id} - Get Product Info by id (v2.?.?)
+#### GET /product/{product_id} - Get Product Info by id (v2.2.1)
 
 e.g. http://www.mysite.com/phplicengine/api/product/1
 
@@ -36,7 +36,7 @@ try {
 }
 ```
 
-#### GET /product/name/{name} - Get Product Info by name (v2.?.?)
+#### GET /product/name/{name} - Get Product Info by name (v2.2.1)
 
 Service method:
 ```php
