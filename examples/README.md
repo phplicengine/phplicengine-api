@@ -2,6 +2,9 @@
 
 ## Contents
 * [Client service](https://github.com/phplicengine/phplicengine-api/blob/master/examples/client.md)
+* [Product service](https://github.com/phplicengine/phplicengine-api/blob/master/examples/product.md)
+* [License service](https://github.com/phplicengine/phplicengine-api/blob/master/examples/license.md)
+* [Order service](https://github.com/phplicengine/phplicengine-api/blob/master/examples/order.md)
 * [Custom cURL Options](#custom-curl-options)
 * [Upload Files](#upload-files)
 
