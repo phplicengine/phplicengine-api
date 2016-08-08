@@ -5,7 +5,7 @@ Service class:
 $api = new \PHPLicengine\Service\License($base_url, $api_key);
 ```
 
-#### POST /license/add - Add License (v2.?.?)
+#### POST /license/add - Add License (v2.2.1)
 
 e.g. http://www.mysite.com/phplicengine/api/license/add
 
@@ -82,7 +82,7 @@ Array
 )
 ```
 
-#### POST /license/change/status - Change License Status (v2.?.?)
+#### POST /license/change/status - Change License Status (v2.2.1)
 
 0 = pending, 1 = active
 
