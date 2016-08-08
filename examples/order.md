@@ -5,7 +5,7 @@ Service class:
 $api = new \PHPLicengine\Service\Order($base_url, $api_key);
 ```
 
-#### POST /order/add - Add Order (v2.?.?)
+#### POST /order/add - Add Order (v2.2.1)
 
 e.g. http://www.mysite.com/phplicengine/api/order/add
 
@@ -82,7 +82,7 @@ Array
 )
 ```
 
-#### POST /order/change/status - Change Order Status (v2.?.?)
+#### POST /order/change/status - Change Order Status (v2.2.1)
 
 0 = pending, 1 = active, 2 = expired, 3 = cancel
 
