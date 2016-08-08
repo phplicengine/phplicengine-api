@@ -65,7 +65,7 @@ Service method:
 $response = $api->getClientsByStatus("fraud");
 ```
 
-#### POST /client/change/status - Change Client Status (v2.?.?)
+#### POST /client/change/status - Change Client Status (v2.2.1)
 
 0 = pending, 1 = active, 2 = cancel, 3 = fraud
 
@@ -79,7 +79,7 @@ Respnse:
 {"message":"success"}
 ```
 
-#### POST /client/add - Add Client Status (v2.?.?)
+#### POST /client/add - Add Client Status (v2.2.1)
 
 
 Service method:
@@ -109,5 +109,3 @@ $client['custom1'] = "";
 
 $response = $api->addClient($client);
 ```
-
-
