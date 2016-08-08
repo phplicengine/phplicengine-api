@@ -5,7 +5,7 @@ Service class:
 $api = new \PHPLicengine\Service\Reference($base_url, $api_key);
 ```
 
-#### GET /reference/{$reference} - Get API Log by reference (v2.2.1)
+#### GET /reference/{reference} - Get API Log by reference (v2.2.1)
 
 e.g. http://www.mysite.com/phplicengine/api/reference/20160807_04be5tuh
 
