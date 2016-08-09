@@ -79,7 +79,7 @@ Respnse:
 {"message":"success"}
 ```
 
-#### POST /client/add - Add Client Status (v2.2.1)
+#### POST /client/add - Add New Client (v2.2.1)
 
 
 Service method:
