@@ -2,6 +2,7 @@ All API URLs listed here must be prefixed by the root API URL, such as http://ww
 
 Service class:
 ```php
+$base_url = "http://www.mysite.com/phplicengine"; // no trailing slash.
 $api = new \PHPLicengine\Service\Client($base_url, $api_key);
 ```
 
