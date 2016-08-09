@@ -2,10 +2,11 @@ All API URLs listed here must be prefixed by the root API URL, such as http://ww
 
 Service class:
 ```php
+$base_url = "http://www.mysite.com/phplicengine"; // no trailing slash!
 $api = new \PHPLicengine\Service\Order($base_url, $api_key);
 ```
 
-#### POST /order/add - Add Order (v2.2.1)
+#### POST /order/add - Add New Order (v2.2.1)
 
 e.g. http://www.mysite.com/phplicengine/api/order/add
 
@@ -16,7 +17,7 @@ $order['orderItems'][]['productId'] = 2; // required.
 
 $order['payType'] = "PayPal"; // optional.
 $order['amount'] = 10.00; // optional. will be set as 00.00 if missing.
-$order['referer'] = $_COOKIE['jamcom']; // optional'
+$order['referer'] = $_COOKIE['jamcom']; // optional.
 $order['coupon'] = "SOMETHING"; // optional.
 
 $response = $api->addOrder($order);
