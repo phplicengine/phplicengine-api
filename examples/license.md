@@ -2,17 +2,17 @@ All API URLs listed here must be prefixed by the root API URL, such as http://ww
 
 Service class:
 ```php
+$base_url = "http://www.mysite.com/phplicengine"; // no trailing slash!
 $api = new \PHPLicengine\Service\License($base_url, $api_key);
 ```
 
-#### POST /license/add - Add License (v2.2.1)
+#### POST /license/add - Add New License (v2.2.1)
 
 e.g. http://www.mysite.com/phplicengine/api/license/add
 
 Service method:
 ```php
 $orderItemId = 2; // required.
-
 $response = $api->addLicense($orderItemId);
 ```
 
@@ -47,6 +47,10 @@ Array
     [locked] => 0
     [domainName] => 
     [secureDomainName] => 
+    [ip] => 
+    [hostName] =>
+    [serverIp] => 
+    [directory] =>
     [licenseKey] => 0E64E718BD11A0A8289843A10ED4C9D8
     [brand] => 0
     [orderedOn] => 1470435858
