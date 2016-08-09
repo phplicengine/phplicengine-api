@@ -34,7 +34,7 @@ class Product extends \PHPLicengine\Api\Api {
              parent::__construct($api_key);
              $this->url = $base_url.'/api';       
 
-             $response = $this->get($this->url.'/');
+             $response = $this->get($this->url.'/index.php');
              if (!$this->isCurlError()) {
                  if ($response->isOk()) {
                      if (!$response->isValidResponse()) {
