@@ -96,8 +96,8 @@ $client['usergroup_id'] = "1";
 $client['ip'] = ""; // recommended.
 
 // Followings may or may not be required depending on your Settings -> Form Settings
-$client['addr1'] = "";
-$client['addr2'] = "";
+$client['addr01'] = "";
+$client['addr02'] = "";
 $client['company'] = "";
 $client['stchoice'] = ""; // 1 = US/CA states, 2 = non-US/CA states
 $client['state'] = "";
