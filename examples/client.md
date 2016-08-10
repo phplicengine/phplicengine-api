@@ -103,7 +103,7 @@ $client['stchoice'] = ""; // 1 = US/CA states, 2 = non-US/CA states
 $client['state'] = "";
 $client['country'] = "us"; // 2-digits ISO
 $client['phone'] = "";
-$client['countryCode'] = "";
+$client['countryCode'] = ""; // country phone code without leading 00
 $client['fax'] = "";
 $client['zip'] = "";
 $client['custom1'] = "";
