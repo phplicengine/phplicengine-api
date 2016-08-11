@@ -63,6 +63,15 @@ class License extends \PHPLicengine\Api\Api {
              return $this->post($this->url . '/license/change/status', $data);
       }
 
+      public function changeLicenseLock ($id, $status) 
+      {
+             $_status['unlocked'] = 0;
+             $_status['locked'] = 1;
+             $data['locked'] = $_status[strtolower($status)];
+             $data['id'] = $id;
+             return $this->post($this->url . '/license/change/lock', $data);
+      }
+
       public function getLicense ($orderItemId) 
       {
              return $this->get($this->url . '/license/'. intval($orderItemId));
