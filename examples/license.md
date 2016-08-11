@@ -108,7 +108,7 @@ $response = $api->getLicense($orderItemId);
 
 Respnse:
 ```
-sample below is for remote license. It will be different for other license types.
+Sample below is for remote license. It will be different for other license types.
 (
     [licenseInfo] => Array
         (
