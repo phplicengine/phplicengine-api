@@ -67,7 +67,7 @@ class Order extends \PHPLicengine\Api\Api {
 
       public function getOrder ($id) 
       {
-             return $this->get($this->url . '/order/'.$id);
+             return $this->get($this->url . '/order/'. intval($id));
       }
 
 }
