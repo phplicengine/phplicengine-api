@@ -103,6 +103,7 @@ $response = $api->getOrder($id);
 Response:
 
 ```
+Array
 (
     [id] => 102
     [orderId] => 825074690149
