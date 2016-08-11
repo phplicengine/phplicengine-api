@@ -100,7 +100,7 @@ Respnse:
 {"message":"success"}
 ```
 
-#### GET /license/{orderItemid} - Get License Info (v2.2.1)
+#### GET /license/{orderItemId} - Get License Info (v2.2.1)
 
 Service method:
 ```php
@@ -153,7 +153,7 @@ sample below is for remote license. It will be different for other license types
             [optVal2] => 
             [optVal3] => 
             [optVal4] => 
-            [optVal5] => 4
+            [optVal5] => 
         )
 )
 
