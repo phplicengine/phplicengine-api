@@ -99,6 +99,20 @@ Respnse:
 {"message":"success"}
 ```
 
+#### POST /license/change/lock - Change License Lock (v2.2.1)
+
+0 = unlocked, 1 = locked
+
+Service method:
+```php
+$response = $api->changeLicenseLocked($orderItemId, "locked");
+```
+
+Respnse:
+```
+{"message":"success"}
+```
+
 #### GET /license/{orderItemId} - Get License Info (v2.2.1)
 
 Service method:
