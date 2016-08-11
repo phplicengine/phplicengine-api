@@ -65,6 +65,6 @@ class License extends \PHPLicengine\Api\Api {
 
       public function getLicense ($orderItemId) 
       {
-             return $this->get($this->url . '/license/', $orderItemId);
+             return $this->get($this->url . '/license/'. intval($orderItemId));
       }
 }
