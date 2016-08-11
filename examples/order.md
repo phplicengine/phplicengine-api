@@ -92,12 +92,12 @@ Service method:
 $response = $api->changeOrderStatus($id, "active");
 ```
 
-#### GET /order/{orderId} - Get Order Info By Id (v2.2.1)
+#### GET /order/{orderId} - Get Order Info By orderId (v2.2.1)
 
 Service method:
 ```php
-$id = 825074690149;
-$response = $api->getOrder($id);
+$orderId = 825074690149;
+$response = $api->getOrder($orderId);
 ```
 
 Response:
