@@ -91,3 +91,46 @@ Service method:
 ```php
 $response = $api->changeOrderStatus($id, "active");
 ```
+
+#### GET /order/{orderId} - Get Order Info By Id (v2.2.1)
+
+Service method:
+```php
+$id = 825074690149;
+$response = $api->getOrder($id);
+```
+
+Response:
+
+```
+(
+    [id] => 102
+    [orderId] => 825074690149
+    [clientId] => 1
+    [orderedOn] => 1470429003
+    [payType] => 
+    [amount] => 50.000
+    [status] => 0
+    [referer] => 
+    [coupon] => 
+    [note] => 
+    [orderItems] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 115
+                    [orderId] => 102
+                    [productId] => 2
+                    [setupFee] => 0.00
+                    [amount] => 1.000
+                    [tp1] => 0
+                    [term] => never
+                    [supportPeriod] => 1501965004
+                    [status] => 0
+                    [lastRenewalDate] => 1470429003
+                    [nextRenewalDate] => never
+                    [nextInvoiceDate] => 
+                )
+        )
+)
+```
