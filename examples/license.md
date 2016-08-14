@@ -169,6 +169,59 @@ Sample below is for remote license. It will be different for other license types
             [optVal5] => 
         )
 )
+```
 
+#### POST /license/update - Update License Data (v2.2.1)
 
+Service method:
+```php
+// Required:
+$data['id'] = 15 // orderItemId
+
+// the followings may or may not be required depending on license settings:
+$data['domainName'] = 
+$data['secureDomainName'] = 
+$data['ip'] = 
+$data['macinfo'] = 
+$data['hostName'] = 
+$data['serverIp'] = 
+$data['directory'] = 
+$data['brand'] = 
+
+// optional key value pairs if required and missing, the defaults will be copied from license settings:
+$data['optVal1'] = 
+$data['optVal2'] = 
+$data['optVal3'] = 
+$data['optVal4'] = 
+$data['optVal5'] = 
+
+$response = $api->updateLicense($data);
+```
+
+Respnse:
+```
+Sample below is for remote license. It will be different for other license types.
+(
+    [license] => Array
+        (
+            [orderId] => 15
+            [status] => 0
+            [locked] => 1
+            [domainName] => 
+            [secureDomainName] => 
+            [ip] => 
+            [hostName] => 
+            [serverIp] => 
+            [directory] => 
+            [licenseKey] => prefix_5B8FA6E4C94C06D69BEF401DD062D217
+            [brand] => 1
+            [orderedOn] => 1470435024
+            [expiryOn] => never
+            [optVal1] => 
+            [optVal2] => 
+            [optVal3] => 
+            [optVal4] => 
+            [optVal5] => 
+        )
+)
 ```
