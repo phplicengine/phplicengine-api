@@ -76,4 +76,10 @@ class License extends \PHPLicengine\Api\Api {
       {
              return $this->get($this->url . '/license/'. intval($orderItemId));
       }
+
+      public function updateLicense ($data) 
+      {
+             return $this->post($this->url . '/license/update', $data);
+      }
+ 
 }
