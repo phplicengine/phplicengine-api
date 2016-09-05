@@ -33,6 +33,8 @@ class Api {
            protected $curlErrno = false;
            protected $curlError = false;
            protected $curlProxy = false;
+           protected $response = false;
+           protected $request = array();
            private   $_curl_callback;
 
            public function __construct($api_key = null) 
@@ -127,9 +129,13 @@ class Api {
                   if (!empty($this->_api_key)) {
                       $headers[] = $this->_api_key_var.': '.$this->_api_key;
                   }
+
+                  $this->request['method'] = strtoupper($method);
                   if (!empty($headers)) {
                       curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                      $this->request['headers'] = $headers;
                   }
+                  $this->request['params'] = $params;
 
                   $this->response = curl_exec($ch);
                   if (curl_errno($ch)) {
@@ -187,6 +193,16 @@ class Api {
                   return substr($this->response, $this->curlInfo['header_size']);
            }
 
+           public function getResponse()
+           {
+                  return $this->response;      
+           }
+
+           public function getRequest()
+           {
+                  return $this->request;
+           }
+           
            public function get($url, $params = null, $headers = null)
            {
                   return $this->_call($url, $params, $headers, $method = "GET");      
