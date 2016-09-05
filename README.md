@@ -56,6 +56,10 @@ $response = $api->get($url, null, null);
 // print($response->getBody());
 // exit;
 
+// for logging purposes only:
+// print($api->getResponse());
+// print_r($api->getRequest());
+
 if (!$api->isCurlError()) { // checks for cURL error
 
     if ($response->isOk()) { // checks for Code:200
