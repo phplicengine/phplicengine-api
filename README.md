@@ -146,7 +146,7 @@ For service classes usage, See [here](https://github.com/phplicengine/phplicengi
 ## Changelog
 New methods: (v2.x.x)
 ```php
-//for logging purposes only:
+// for logging purposes only:
 print($api->getResponse());
 print_r($api->getRequest());
 
