@@ -41,6 +41,10 @@ $api = new Api();
 // timeout is set to 30 by default. You can use below to change it if needed.
 // $api->setTimeout(60);
 
+// Sets the host:port of a proxy to be used by cURL. If this is not set,  
+// no proxy is used. For example, $api->setCurlProxy('proxy.example.com:3128');  
+// $api->setCurlProxy($proxy);  
+
 // get(), post(), delete(), put() methods are available.
 // first parameter is url, second is query as array, third is header as array.
 // Only first parameter (i.e. $url) is required.
