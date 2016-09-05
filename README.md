@@ -60,6 +60,8 @@ $response = $api->get($url, null, null);
 // for logging purposes only:
 // print($api->getResponse());
 // print_r($api->getRequest());
+// print_r($response->getHeaders());
+// print($response->getBody());
 
 if (!$api->isCurlError()) { // checks for cURL error
 
