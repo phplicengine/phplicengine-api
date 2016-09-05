@@ -32,6 +32,7 @@ class Api {
            protected $_verify_host = 2;
            protected $curlErrno = false;
            protected $curlError = false;
+           protected $curlProxy = false;
            private   $_curl_callback;
 
            public function __construct($api_key = null) 
@@ -70,6 +71,11 @@ class Api {
                   $this->_api_key_var = $api_key_var; 
            } 
 
+           public function setCurlProxy($proxy)  
+           {  
+                  $this->curlProxy = $proxy;  
+           }  
+
            public function setCurlCallback($callback) 
            { 
                   $this->_curl_callback = $callback; 
@@ -86,6 +92,9 @@ class Api {
                   curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, $this->_verify_host);
                   curl_setopt($ch, CURLOPT_HEADER, 1);
                   curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
+                  if ($this->curlProxy) {  
+                      curl_setopt($ch, CURLOPT_PROXY, $this->curlProxy);  
+                  }  
                   if ($this->_curl_callback) { 
                       call_user_func($this->_curl_callback, $ch, $params, $headers, $method); 
                   } 
