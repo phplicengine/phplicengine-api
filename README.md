@@ -8,6 +8,7 @@ You can use this API library for any needs, not necessarily for PHPLicengine API
 * [Installation](#installation)
 * [Sample](#sample)
 * [Manual](#manual)
+* [Changelog](#changelog)
 * [License](#license)
 
 ## Usage
@@ -139,6 +140,16 @@ Array
 
 #### Service Classes
 For service classes usage, See [here](https://github.com/phplicengine/phplicengine-api/tree/master/examples).
+
+## Changelog
+New methods: (v 2.x.x)
+//for logging purposes only:
+print($api->getResponse());
+print_r($api->getRequest());
+
+// Sets the host:port of a proxy to be used by cURL. If this is not set,  
+// no proxy is used. For example, $api->setCurlProxy('proxy.example.com:3128');  
+$api->setCurlProxy($proxy); 
 
 ## License
 PHPLicengine Api is distributed under the Apache License. See [License](https://github.com/phplicengine/phplicengine-api/blob/master/LICENSE).
