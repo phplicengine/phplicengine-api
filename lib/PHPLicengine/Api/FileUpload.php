@@ -30,10 +30,6 @@ class FileUpload {
 
       public function __construct($filename)
       {
-             if (version_compare("5.5.0", PHP_VERSION, ">")) 
-             {
-                 throw new FileException ("For cURL upload, php >= 5.5.0 is required.");
-             }
              if (!extension_loaded("fileinfo")) 
              {
 	         throw new FileException ("For cURL upload, 'fileinfo' PHP extension is required.");
