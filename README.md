@@ -157,6 +157,9 @@ print_r($api->getRequest());
 // no proxy is used. For example, $api->setCurlProxy('proxy.example.com:3128');  
 $api->setCurlProxy($proxy); 
 ```
+New methods: (v2.2.2)
+
+Added `patch()` method.
 
 ## License
 PHPLicengine Api is distributed under the Apache License. See [License](https://github.com/phplicengine/phplicengine-api/blob/master/LICENSE).
