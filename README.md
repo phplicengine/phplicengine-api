@@ -49,7 +49,7 @@ $api = new Api();
 // no proxy is used. For example, $api->setCurlProxy('proxy.example.com:3128');  
 // $api->setCurlProxy($proxy);  
 
-// get(), post(), delete(), put() methods are available.
+// get(), post(), delete(), put(), patch() methods are available.
 // first parameter is url, second is query as array, third is header as array.
 // Only first parameter (i.e. $url) is required.
 $response = $api->get($url, null, null);
