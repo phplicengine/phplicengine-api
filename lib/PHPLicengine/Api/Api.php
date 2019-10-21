@@ -102,6 +102,7 @@ class Api {
                   } 
                   switch (strtoupper($method)) { 
                           case 'PUT':
+                          case 'PATCH':
                           case 'DELETE':
                                       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
                                       curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
@@ -221,6 +222,11 @@ class Api {
            public function put($url, $params = null, $headers = null) 
            {
                   return $this->_call($url, $params, $headers, $method = "PUT");      
+           }
+
+           public function patch($url, $params = null, $headers = null) 
+           {
+                  return $this->_call($url, $params, $headers, $method = "PATCH");      
            }
 
            public function getCurlInfo()
